@@ -1,0 +1,44 @@
+{
+    "train_imgs": "CXR8_repo/train_val_list.txt",
+
+    "meta_file": "CXR8_repo/Data_Entry_2017_v2020.csv",
+
+    "val_percent": 0.25,
+    "random_seed": 2021,
+    "long_side": 1024,
+    "backbone": "transfuser",
+    "use_transforms_type": "Aug",
+
+    "finetune": false,
+
+    "num_classes": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    "batch_weight": true,
+
+
+    "pos_weight": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    "train_batch_size": 12,
+    "dev_batch_size": 12,
+
+    "log_every": 10,
+    "epoch": 60,
+
+    "cxr_mean": [0.5134, 0.5134, 0.5134],
+    "cxr_var":[0.2561, 0.2561, 0.2561],
+    "phase2_mean":[0.5542, 0.5542, 0.5542],
+    "phase2_var":[0.3030, 0.3030, 0.3030],
+
+    
+    "criterion": "BCE",
+    "LR": 0.0001,
+
+    "lr_epochs": 5,
+
+    "best_target": "auc",
+    "save_top_k": 3,
+    "save_index": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+    "image_type": ["phase2"],
+
+    "norm": true,
+    "enh_norm": false,
+    "extend": false
+}
